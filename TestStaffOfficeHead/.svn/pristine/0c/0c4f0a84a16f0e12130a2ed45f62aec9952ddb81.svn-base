@@ -1,0 +1,68 @@
+package properties;
+
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import org.apache.log4j.Logger;
+
+public class PropertiesManager {
+    
+	
+	public static String GENERATE_EVIDENCE_PARAM = "generateEvidence";
+	public static String SERVER_HOST_PARAM = "serverHost";
+	public static String SERVER_PORT_PARAM = "serverPort";
+	public static String SERVER_HOST_PARAM_DB = "serverDbHost";
+	public static String SERVER_USR_ISSR_PARAM_DB = "serverDbUserIssr";
+	public static String SERVER_USR_ACQR_PARAM_DB = "serverDbUserAcqr";
+	public static String SERVER_PASS_PARAM_DB = "serverDbPass";
+	
+    private static final Logger logger = Logger.getLogger(PropertiesManager.class);
+    private static PropertiesManager instance = null;
+    private final Properties props = new Properties();
+    private final Properties fleet = new Properties();
+    private final Properties db = new Properties();
+    
+    
+    private PropertiesManager(){
+        try{
+            props.load(new FileInputStream("config.properties"));
+            fleet.load(new FileInputStream("urlsFleet.properties"));
+            db.load(new FileInputStream("db.properties"));
+        }catch(Exception e){
+            logger.info("Fail loading properties files");
+        }
+    }
+    
+    
+    public static PropertiesManager getInstance(){
+        if(instance==null){
+            instance = new PropertiesManager();
+        }
+        return instance;
+    }
+    
+    public String getProperty(EPropertiesNames propertyName){
+    	return this.props.getProperty(propertyName.name());
+    }
+    
+    public String getDBProperty(EPropertiesDB propertyName){
+        return this.db.getProperty(propertyName.name());
+    }
+	
+	
+	public static boolean getBooleanArgParam(String key){
+	    String param = getArgParam(key);
+	    return Boolean.parseBoolean(param);
+	}
+	
+	public static String getArgParam(String key,String ... defaultParam){
+		
+		String ret = System.getProperty(key);
+		if(ret==null || "".equalsIgnoreCase(ret)){
+			if(defaultParam.length>0){
+				ret =defaultParam[0];
+			}
+		}
+		return ret;
+	}
+}

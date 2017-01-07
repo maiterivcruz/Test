@@ -1,0 +1,83 @@
+package test.controller;
+
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import test.pageobject.StaffOfficePO;
+import util.AbstractPageTest;
+import util.TestCaseNumberUtils;
+import util.WebAccess;
+
+public class StaffOffice extends AbstractPageTest  {
+
+	public StaffOffice(WebAccess accesoWeb) {		
+		super(accesoWeb);
+		// TODO Auto-generated constructor stub
+	}
+	public void checkUI(){
+		//office 
+		validator.validate(StaffOfficePO.inputNameOffice)
+					.validate(StaffOfficePO.btnAddOffice)
+					.validate(StaffOfficePO.btnDeleteOffice)
+					.validate(StaffOfficePO.rowHeaderNameOffice)
+					.validate(StaffOfficePO.rowHeaderChkOffice);
+		//staff
+		validator.validate(StaffOfficePO.inputNameStaff)
+					.validate(StaffOfficePO.selectDateStaff)
+					.validate(StaffOfficePO.selectOffices)
+					.validate(StaffOfficePO.btnAddStaff)
+					.validate(StaffOfficePO.rowHeaderStaffMemberName)
+					.validate(StaffOfficePO.rowHeaderOfficeName)
+					.validate(StaffOfficePO.rowHeaderDateOfHire)
+					.validate(StaffOfficePO.rowHeaderChkStaff)
+					.validate(StaffOfficePO.btnDeleteStaff);
+	}
+	public int countOffices(){
+		screenUtil.waitForElementBySelector(StaffOfficePO.chkOffice);
+		List <WebElement> offices =  screenUtil.getListOfElements(StaffOfficePO.chkOffice);
+		return offices.size();
+	}
+	public void insertData(String nameOff){
+		screenUtil.clickElement(StaffOfficePO.inputNameOffice);
+		screenUtil.sendKeys(StaffOfficePO.inputNameOffice, nameOff);
+		screenUtil.getElement(StaffOfficePO.btnAddOffice).click();
+	}
+	public void checkMsgEmptyOffice(){
+		screenUtil.elementIsDisplayed(StaffOfficePO.popupOffice);
+		Assert.assertEquals("Please fill out the name of the office.", screenUtil.getText(StaffOfficePO.msgOffice));
+	}
+	public void checkMsgOfficeUnique(){
+		screenUtil.elementIsDisplayed(StaffOfficePO.popupOffice);
+		Assert.assertEquals("Office names must be unique.", screenUtil.getText(StaffOfficePO.msgOffice));
+	}
+	
+	public String getOffice() throws JSONException{
+		String str = "{ \"name\":[ \"Marketing\" ,\"Management\", \"Development\" , \"Testing\"] }";
+		
+		JSONObject obj = new JSONObject(str);
+		JSONArray arr = obj.getJSONArray("name");
+		for (int i = 0; i < arr.length(); i++)
+		    System.out.println(arr.getString(i));
+		String office=arr.getString(TestCaseNumberUtils.getRandomNumberFrom(0, 3));
+		return office;
+	}
+	public void deleteOffice(String confirm){
+		validator.validate(StaffOfficePO.chkOffice);
+		List<WebElement> office=screenUtil.getListOfElements(StaffOfficePO.chkOffice);
+		office.get(TestCaseNumberUtils.getRandomNumberFrom(0, 3)).click();
+		screenUtil.clickElement(StaffOfficePO.btnDeleteOffice);
+		if(confirm.equals("yes"))
+		screenUtil.clickElement(StaffOfficePO.btnYesDelete);
+		else
+		screenUtil.clickElement(StaffOfficePO.btnNoDelete);
+
+	}
+	
+	
+
+}

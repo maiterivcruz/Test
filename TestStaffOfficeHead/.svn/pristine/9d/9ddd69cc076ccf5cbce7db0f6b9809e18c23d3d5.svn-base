@@ -1,0 +1,28 @@
+package util;
+
+public class Constants {
+	//EN SEGUNDOS
+	public static int TimeOut1Segundos = 1;
+	public static int TimeOut2Segundos = 2;
+	public static int TimeOut5Segundos = 5;
+	public static int TimeOut10Segundos = 10;
+	public static int TimeOut15Segundos = 15;
+	public static int TimeOut20Segundos = 20;
+	public static int TimeOut25Segundos = 25;
+	public static int TimeOut30Segundos = 30;
+	public static int TimeOut60Segundos = 60;
+	
+	//EN MILISEGUNDOS
+	public static int TimeOut025Milisegundos = 250;
+	public static int TimeOut05Milisegundos = 500;
+	public static int TimeOut1Milisegundos = 1000;
+	public static int TimeOut2Milisegundos = 2000;
+	public static int TimeOut3Milisegundos = 3000;
+	public static int TimeOut5Milisegundos = 5000;
+	public static int TimeOut10Milisegundos = 10000;
+	public static int TimeOut15Milisegundos = 15000;
+	public static int TimeOut20Milisegundos = 20000;
+	public static int TimeOut25Milisegundos = 25000;
+	public static int TimeOut30Milisegundos = 30000;
+	public static int TimeOut60Milisegundos = 60000;
+}

@@ -1,0 +1,24 @@
+package test;
+import java.lang.reflect.Method;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import test.pageobject.StaffOfficePO;
+import util.WebAcces;
+
+
+
+public class TestStaffOffice extends WebAcces{
+	@Parameters({"testName", "testLinkName" })
+	@Test
+	public void OpenBrowser(String testName, String testLinkName){
+		driver.get("file:///C:/Users/maite/OneDrive/Documentos/Studies/StudyCaseSelenium/AddielRodriguezJavaScriptTestTask/javascript/index.html");
+//		driver.findElement(StaffOfficePO.inputNameOffice.getSelector()).click();
+//		driver.findElement(StaffOfficePO.inputNameOffice.getSelector()).sendKeys("test");
+		driver.findElement(StaffOfficePO.btnAddOffice.getSelector()).click();
+	}
+
+
+
+}

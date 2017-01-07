@@ -1,0 +1,565 @@
+package util;
+
+import java.text.MessageFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import elements.IElementView;
+
+
+public class NUtilities {
+
+	private final WebDriver driver;
+	//private final String baseUrl;
+	private static Logger logger = Logger.getLogger(NUtilities.class);
+	
+	private NUtilities(WebAccess accesoWeb) {
+		this.driver = accesoWeb.getDriver();
+//		this.baseUrl = accesoWeb.getBaseUrl();
+	}
+
+	public static NUtilities with(WebAccess accesoWeb) {
+		return new NUtilities(accesoWeb);
+	}
+
+	public void switchToNewWindow() {
+		String aux = "";
+		Set<String> windows = this.getWindowHandles();
+		for (String window : windows) {
+			aux = window;
+		}
+		this.switchToWindow(aux);
+	}
+
+	public boolean checkInteger(String pNumero){
+		try {
+			Integer.parseInt(pNumero);
+			return true;
+		}catch(NumberFormatException ex){
+			return false;
+		}
+	}
+	
+	
+	public void waitForPopUp(IElementView element) {
+		int i = 0;
+		while (!popUpIsVisible(element)){
+			mediumWait();
+			if(i==30){
+				break;
+			}
+			i++;
+		}
+	}
+	
+	
+	
+
+	public String getWindowHandle() {
+		return driver.getWindowHandle();
+	}
+
+	public Set<String> getWindowHandles() {
+		return driver.getWindowHandles();
+	}
+
+	public void switchToIFrame(IElementView element) {
+		driver.switchTo().frame(driver.findElement(element.getSelector()));
+	}
+
+	public void switchToDefaultContent() {
+		driver.switchTo().defaultContent();
+		veryShortWait();
+	}
+
+	public boolean elementIsDisplayed(IElementView element) {
+		try{
+			return driver.findElement(element.getSelector()).isDisplayed();
+		}catch (NoSuchElementException ex){
+			return false;
+		}
+		
+	}
+
+	public boolean popUpIsVisible(IElementView element) {
+		try {
+			return "visible".equalsIgnoreCase(driver.findElement(element.getSelector()).getCssValue("visibility"));
+		}catch (NoSuchElementException ex) {
+			return false;
+			
+		}
+	}
+	
+	/**
+	 * Refresca la pantalla
+	 */
+	public void refresh() {
+		driver.navigate().refresh();
+	}
+	
+	public boolean elementIsVisible(IElementView element) {
+		try {
+			return !"none".equalsIgnoreCase(driver.findElement(element.getSelector()).getCssValue("display"));
+		}catch (NoSuchElementException ex){
+			return false;
+		}
+		
+	}
+
+	public void veryShortWait() {
+		try {
+			Thread.sleep(Constants.TimeOut05Milisegundos);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	/**
+	 * Espera 1 Segundo / 1000 Milisegundos
+	 */
+	public void shortWait() {
+		try {
+			Thread.sleep(Constants.TimeOut1Milisegundos);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Espera 2 Segundos / 2000 Milisegundos.
+	 */
+	public void mediumWait() {
+		try {
+			Thread.sleep(Constants.TimeOut2Milisegundos);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Espera 5 Segundos / 5000 Milisegundos
+	 */
+	public void longWait() {
+		try {
+			Thread.sleep(Constants.TimeOut5Milisegundos);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void veryLongWait() {
+		try {
+			Thread.sleep(Constants.TimeOut10Milisegundos);
+		}catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Devuelve texto de un elemento
+	 * 
+	 * @param element
+	 * @return
+	 */
+	public String getText(final IElementView element) {
+		WebElement el = driver.findElement(element.getSelector());
+		return el.getText().trim();
+	}
+
+	public String getText(final By selector) {
+		WebElement el = driver.findElement(selector);
+		return el.getText().trim();
+	}
+
+	public NUtilities navigate(String url) {
+//		System.out.println("LA BASEURL DE LA MAIN PAGE ES: " + baseUrl);
+		System.out.println("LA URL Q OBTUVE DE LA DB ES: " + url);
+		this.driver.navigate().to(url);
+		System.out.println("AMBAS URLS JUNTAS: " +  url);
+		mediumWait();
+		return this;
+	}
+
+	/**
+	 * Devuelve un elemento random de una lista.
+	 * 
+	 * @param table
+	 * @return
+	 */
+	public int getRandomRowID(final IElementView table) {
+		List<WebElement> lista = driver.findElements(table.getSelector());
+		return TestCaseNumberUtils.getRandomNumberFrom(1, lista.size());
+	}
+
+	/**
+	 * Selecionar un elemento random de un drop down
+	 * 
+	 * @param list
+	 * @return
+	 */
+	public int getRandomElementDropDown(final IElementView list) {
+		List<WebElement> lista = driver.findElements(list.getSelector());
+		return TestCaseNumberUtils.getRandomNumberFrom(2, lista.size());
+	}
+
+	public void clickElement(final IElementView element) {
+		clickElement(element.getSelector());
+	}
+
+	public void clickElement(final By selector) {
+		shortWait();
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(90000, TimeUnit.MILLISECONDS).pollingEvery(5500, TimeUnit.MILLISECONDS);
+		wait.until(new ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				try {
+					driver.findElement(selector).click();
+					return true;
+				} catch (StaleElementReferenceException e) {
+					return false;
+				}
+			}
+		});
+		shortWait();
+	}
+
+	public void mouseOver(final IElementView menu, final IElementView option) {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		WebElement we = driver.findElement(menu.getSelector());
+		mediumWait();
+		executor.executeScript("arguments[0].click();", we);
+		mediumWait();
+		WebElement opt = driver.findElement(option.getSelector());
+		opt.click();
+		shortWait();
+	}
+
+	public void mouseOver(final IElementView menu) {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		WebElement we = driver.findElement(menu.getSelector());
+		shortWait();
+		executor.executeScript("arguments[0].click();", we);
+		mediumWait();
+	}
+
+	public void switchToWindow(String window) {
+		driver.switchTo().window(window);
+		shortWait();
+	}
+
+	public void clearInput(final IElementView element) {
+		driver.findElement(element.getSelector()).clear();
+		veryShortWait();
+	}
+
+	public void sendKeys(final IElementView element, final String pStr) {
+		driver.findElement(element.getSelector()).sendKeys(pStr);
+		shortWait();
+	}
+
+	public String getElementAttribute(final By selector, final String pAtr) {
+		return driver.findElement(selector).getAttribute(pAtr);
+	}
+
+	public String getElementAttribute(final IElementView element, final String pAttr) {
+		return driver.findElement(element.getSelector()).getAttribute(pAttr).trim();
+	}
+
+	/**
+	 * Devuelve lista de WebElements
+	 * 
+	 * @param element
+	 * @return
+	 */
+	public List<WebElement> getListOfElements(final IElementView element) {
+		return driver.findElements(element.getSelector());
+	}
+
+	public void selectElementFromList(final IElementView element, String pElementoDeseado) {
+		List<WebElement> aux = getListOfElements(element);
+		for (int i = 1; i < aux.size(); i++) {
+			WebElement el = aux.get(i);
+			scrollToElement(el);
+			if (el.getText().contains(pElementoDeseado)) {
+				el.click();
+				break;
+			}
+		}
+	}
+
+//	public void setSpecficDate(IElementView btnCalendario, int pDia, int pMes, int pAño) {
+//		clickElement(btnCalendario);
+//		Select mes = new Select(driver.findElement(CommonElements.CALENDAR_MONTH.getSelector()));
+//		mes.selectByValue((pMes - 1) + "");
+//		shortWait();
+//		Select año = new Select(driver.findElement(CommonElements.CALENDAR_YEAR.getSelector()));
+//		año.selectByValue(pAño + "");
+//		shortWait();
+//		driver.findElement(By.xpath("//a[text()='" + pDia + "']")).click();
+//	}
+//
+//	public void setDateCalendarFrom(final IElementView calenderButton) {
+//		By selector = By.cssSelector(".ui-datepicker-calendar > tbody > tr:nth-of-type(3) > td:nth-of-type(4) > a");
+//		clickElement(calenderButton);
+//		Select s = new Select(driver.findElement(CommonElements.CALENDAR_YEAR.getSelector()));
+//		s.selectByVisibleText(DateTimeUtil.now().minus(10, Unit.YEARS).getYear() + "");
+//		shortWait();
+//		driver.findElement(selector).click();
+//		clickElement(CommonElements.BOTON_CERRAR_CALENDARIO);
+//		shortWait();
+//	}
+//
+//	public void setDateCalendarTo(final IElementView calenderButton) {
+//		By selector = By.cssSelector(".ui-datepicker-calendar > tbody > tr:nth-of-type(3) > td:nth-of-type(4) > a");
+//		clickElement(calenderButton);
+//		Select s = new Select(driver.findElement(CommonElements.CALENDAR_YEAR.getSelector()));
+//		s.selectByVisibleText(DateTimeUtil.now().plus(1, Unit.YEARS).getYear() + "");
+//		shortWait();
+//		driver.findElement(selector).click();
+//		clickElement(CommonElements.BOTON_CERRAR_CALENDARIO);
+//		shortWait();
+//	}
+
+	/**
+	 * Hace scroll al elemento hasta dejarlo visible.
+	 * 
+	 * @param IElementView
+	 *            element
+	 */
+	public void scrollToElement(final IElementView element) {
+		WebElement el = driver.findElement(element.getSelector());
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("$(arguments[0]).scrollIntoView(true);", el);
+		shortWait();
+	}
+
+	public void scrollToElementTable(final IElementView element, final String cssTableSelector) {
+	  	WebElement el = driver.findElement(element.getSelector());
+		By container = By.cssSelector(MessageFormat.format("{0} .ui-datatable-scrollable-body", cssTableSelector));
+		WebElement cont = driver.findElement(container);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].scrollLeft = arguments[0].scrollLeft + arguments[1];", cont, el.getLocation().x);
+		shortWait();
+	}
+
+	/**
+	 * Hace scroll al elemento hasta dejarlo visible.
+	 * 
+	 * @param By selector
+	 */
+	public void scrollToElement(final By selector) {
+		WebElement el = driver.findElement(selector);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);", el);
+		shortWait();
+	}
+
+	/**
+	 * Hace scroll al elemento hasta dejarlo visible.
+	 * 
+	 * @param WebElement
+	 *            element
+	 */
+	public void scrollToElement(final WebElement element) {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);", element);
+		shortWait();
+	}
+
+	/**
+	 * Comienza el prime face poll
+	 * 
+	 */
+	public void startPoll() {
+		try {
+			((JavascriptExecutor) driver).executeScript("PF('messagesPollWidget').start();");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	/**
+	 * Detiene el poll.
+	 * 
+	 */
+	public void stopPoll() {
+		try {
+			((JavascriptExecutor) driver).executeScript("PF('messagesPollWidget').stop();");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	/**
+	 * Devuelve la ultima pagina, y luego vuelve a la primer pagina.
+	 * 
+	 * @param btnUltimaPagina
+	 * @param paginacion
+	 * @param btnPrimerPagina
+	 * @return
+	 * @throws Exception
+	 */
+	public int ultimaPagina(final IElementView btnUltimaPagina, final IElementView paginacion, final IElementView btnPrimerPagina) throws Exception {
+		int paginas = 0;
+		clickElement(btnUltimaPagina);
+		shortWait();
+		if (getListOfElements(paginacion).size() != 0) {
+			List<WebElement> aux = getListOfElements(paginacion);
+			paginas = Integer.parseInt(aux.get(aux.size() - 1).getText());
+			clickElement(btnPrimerPagina);
+		}
+		shortWait();
+		return paginas;
+	}
+
+	public void dobleClick(By selector) {
+		Actions builder = new Actions(driver);
+		Action doubleClick = builder.doubleClick(driver.findElement(selector)).build();
+		shortWait();
+		doubleClick.perform();
+	}
+
+	/**
+	 * Valida que no haya una mensaje de alerta, si lo hay hace click en
+	 * aceptar.
+	 * 
+	 * @return
+	 */
+	public void handleAlert() {
+		try {
+			driver.switchTo().alert().accept();
+		} catch (NoAlertPresentException ex) {
+
+		}
+	}
+
+	public boolean isTextPresent(String str) {
+		return driver.getPageSource().contains(str);
+	}
+
+	public String getCurrentUrl() {
+		return driver.getCurrentUrl();
+	}
+
+	/**
+	 * Convierte fecha de la base en formato DD/MM/YYYY
+	 * 
+	 * @return
+	 */
+	public String formatearFecha(String fecha) {
+		String fechaFormateada;
+		String nuevaFecha[] = fecha.split("");
+		if (fecha.equalsIgnoreCase("0")) {
+			fechaFormateada = "00/00/0000";
+		} else {
+			fechaFormateada = nuevaFecha[7] + nuevaFecha[8] + "/" + nuevaFecha[5] + nuevaFecha[6] + "/" + nuevaFecha[1] + nuevaFecha[2] + nuevaFecha[3] + nuevaFecha[4];
+		}
+		return fechaFormateada;
+	}
+
+	/**
+	 * Foratea la hora en la BD en formato HH:MM:SS
+	 * 
+	 * @param hora
+	 * @return
+	 * @throws Exception
+	 */
+	public String formatearHora(String hora) throws Exception {
+		String horaFormateada = "";
+		char[] aux = hora.toCharArray();
+		if (hora.length() == 6) {
+			horaFormateada = Character.toString(aux[0]) + Character.toString(aux[1]) + ":" + Character.toString(aux[2]) + Character.toString(aux[3]) + ":" + Character.toString(aux[4]) + Character.toString(aux[5]);
+		}
+		if (hora.length() == 5) {
+			horaFormateada = "0" + Character.toString(aux[0]) + ":" + Character.toString(aux[1]) + Character.toString(aux[2]) + ":" + Character.toString(aux[3]) + Character.toString(aux[4]);
+		}
+		if (hora.equalsIgnoreCase("0")) {
+			horaFormateada = "00:00:00";
+		}
+		return horaFormateada;
+	}
+
+	/**
+	 * Convierte la en la base en formato HH:MM:SS
+	 * 
+	 * @param hora
+	 * @return
+	 * @throws Exception
+	 */
+	public String convertirHora(String hora) throws Exception {
+		String horaFormateada = null;
+		if (hora.length() == 1) {
+			horaFormateada = "00:0" + hora + ":00";
+		}
+		if (hora.length() == 2) {
+			horaFormateada = "00:" + hora + ":00";
+		}
+		if (hora.length() == 3) {
+			String aux[] = hora.split("");
+			horaFormateada = "0" + aux[1] + ":" + aux[2] + aux[3] + ":00";
+		}
+		if (hora.length() == 4) {
+			String aux[] = hora.split("");
+			horaFormateada = aux[1] + aux[2] + ":" + aux[3] + aux[4] + ":00";
+		}
+		if (hora.length() == 6) {
+			String aux[] = hora.split("");
+			horaFormateada = aux[1] + aux[2] + ":" + aux[3] + aux[4] + ":" + aux[5] + aux[6];
+		}
+		if (hora.equalsIgnoreCase("2400")) {
+			horaFormateada = "00:00:00";
+		}
+		return horaFormateada;
+	}
+
+	public WebElement getElement(IElementView element) {
+		WebElement el = driver.findElement(element.getSelector());
+		return el;
+	}
+
+	public WebElement getElement(By selector) {
+		WebElement el = driver.findElement(selector);
+		return el;
+	}
+
+	@Deprecated
+	public void waitForElementById(String elementId) {           
+        WebDriverWait wait = new WebDriverWait(driver, 120);
+        WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(elementId)));
+     }
+	@Deprecated
+    public void waitForElementByXpath(String elementXpath) {        
+        WebDriverWait wait = new WebDriverWait(driver, 120);
+        WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elementXpath)));
+     }
+	@Deprecated
+    public void waitForElementByCss(String elementCss) {        
+        WebDriverWait wait = new WebDriverWait(driver, 120);
+        WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elementCss)));
+     }
+    public void waitForElementBySelector(IElementView selector) {  
+        logger.info("Waiting for Element: " + selector.getElementDescription());
+        WebDriverWait wait = new WebDriverWait(driver, 120);
+        WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(selector.getSelector()));
+     }
+}

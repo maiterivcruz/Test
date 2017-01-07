@@ -1,0 +1,141 @@
+01/12/2016 08:05:19 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:05:19 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 08:05:19 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 08:05:19 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:05:19 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 08:06:42 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:07:01 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 08:07:04 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 08:07:06 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:07:08 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 08:22:12 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:22:12 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 08:22:12 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 08:22:12 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:22:12 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 08:45:54 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:45:54 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 08:45:54 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 08:45:54 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:45:54 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 08:48:20 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:48:20 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 08:48:20 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 08:48:20 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 08:48:20 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 09:02:37 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 09:02:37 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 09:02:37 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 09:02:37 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 09:02:37 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 09:03:58 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 09:03:58 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 09:03:59 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 09:03:59 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 09:03:59 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 09:49:41 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 09:49:41 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 09:49:41 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 09:49:41 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 09:49:41 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - #nameis displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - #dateis displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - #officesis displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - #submitis displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(3)is displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 11:02:33 INFO  (ValidateElement.java:55) - #deleteStaffis displayed
+01/12/2016 14:35:20 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 14:35:20 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 14:35:20 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 14:35:20 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:35:20 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:35:20 INFO  (ValidateElement.java:55) - #nameis displayed
+01/12/2016 14:35:20 INFO  (ValidateElement.java:55) - #dateis displayed
+01/12/2016 14:35:21 INFO  (ValidateElement.java:55) - #officesis displayed
+01/12/2016 14:35:21 INFO  (ValidateElement.java:55) - #submitis displayed
+01/12/2016 14:35:21 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:35:21 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:35:21 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(3)is displayed
+01/12/2016 14:35:21 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:35:21 INFO  (ValidateElement.java:55) - #deleteStaffis displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - #nameis displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - #dateis displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - #officesis displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - #submitis displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(3)is displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:38:18 INFO  (ValidateElement.java:55) - #deleteStaffis displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - #nameis displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - #dateis displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - #officesis displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - #submitis displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(3)is displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:39:09 INFO  (ValidateElement.java:55) - #deleteStaffis displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - #nameis displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - #dateis displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - #officesis displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - #submitis displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(3)is displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:41:27 INFO  (ValidateElement.java:55) - #deleteStaffis displayed
+01/12/2016 14:41:27 INFO  (WebAccess.java:76) - Open chrome
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - #nameOffis displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - #submitOffis displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - #deleteOffis displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - body > div:nth-child(1) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - #nameis displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - #dateis displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - #officesis displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - #submitis displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(2)is displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(3)is displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - body > div:nth-child(2) > div:nth-child(3) > table > thead > tr > th:nth-child(1)is displayed
+01/12/2016 14:43:24 INFO  (ValidateElement.java:55) - #deleteStaffis displayed
+01/12/2016 14:43:24 INFO  (WebAccess.java:76) - Open chrome
+01/12/2016 15:51:27 INFO  (ValidateElement.java:157) - ...Test se ejecuto correctamente...
+01/12/2016 17:48:59 INFO  (ValidateElement.java:157) - ...Test se ejecuto correctamente...
+01/12/2016 18:43:09 INFO  (ValidateElement.java:157) - ...Test se ejecuto correctamente...
+01/12/2016 18:43:09 INFO  (WebAccess.java:80) - Open chrome
+01/12/2016 19:05:44 INFO  (ValidateElement.java:55) - #officesList > tr > td:nth-child(2)>inputis displayed
+01/12/2016 19:07:29 INFO  (NUtilities.java:561) - Waiting for Element: #officesList > tr
+01/12/2016 19:08:20 INFO  (NUtilities.java:561) - Waiting for Element: #officesList > tr
+01/12/2016 19:08:36 INFO  (ValidateElement.java:55) - #officesList > tr > td:nth-child(2)>inputis displayed
+01/12/2016 19:08:47 INFO  (NUtilities.java:561) - Waiting for Element: #officesList > tr
+01/12/2016 19:11:33 INFO  (NUtilities.java:561) - Waiting for Element: #officesList > tr > td:nth-child(2)>input
+01/12/2016 19:11:34 INFO  (ValidateElement.java:55) - #officesList > tr > td:nth-child(2)>inputis displayed
+01/12/2016 19:11:38 INFO  (NUtilities.java:561) - Waiting for Element: #officesList > tr > td:nth-child(2)>input
+02/12/2016 09:46:19 INFO  (NUtilities.java:561) - Waiting for Element: #officesList > tr > td:nth-child(2)>input
+02/12/2016 09:46:21 INFO  (ValidateElement.java:55) - #officesList > tr > td:nth-child(2)>inputis displayed
+02/12/2016 09:46:26 INFO  (NUtilities.java:561) - Waiting for Element: #officesList > tr > td:nth-child(2)>input

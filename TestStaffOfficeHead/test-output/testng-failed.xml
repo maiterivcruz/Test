@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [SuiteStaffOffice]">
+  <parameter name="environment" value="local"/>
+  <parameter name="browser" value="firefox"/>
+  <parameter name="testName" value="TestOffice"/>
+  <test name="TestOffice(failed)">
+    <parameter name="environment" value="local"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="testName" value="TestOffice"/>
+    <classes>
+      <class name="test.TestOffice">
+        <methods>
+          <include name="validateDeleteOfficeWithoutAvailableOFF">
+            <parameter name="testLinkName" value="test validateDeleteOfficeWithoutAvailableOFF"/>
+          </include> <!-- validateDeleteOfficeWithoutAvailableOFF -->
+          <include name="validateAddOfficeEqualSpace">
+            <parameter name="testLinkName" value="test validateAddOfficeEqualSpace"/>
+          </include> <!-- validateAddOfficeEqualSpace -->
+          <include name="commonAfterTestMethod"/>
+          <include name="handleTestMethodName"/>
+        </methods>
+      </class> <!-- test.TestOffice -->
+    </classes>
+  </test> <!-- TestOffice(failed) -->
+</suite> <!-- Failed suite [SuiteStaffOffice] -->

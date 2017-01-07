@@ -1,0 +1,93 @@
+package util;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import properties.*;
+
+
+
+
+public class ScreenShotManager
+{
+
+    private static final Logger logger = Logger.getLogger(ScreenShotManager.class);
+
+    private final boolean generateEvidence;
+
+    private final WebAcces accesoWeb;
+
+    private int screenID;
+
+    public ScreenShotManager(final WebAcces accesoWeb, boolean generateEvidence)
+    {
+        this.generateEvidence = generateEvidence;
+        this.accesoWeb = accesoWeb;
+        this.screenID = 0;
+    }
+
+    public void takeFailureScreenShot()
+    {
+        takeScreenShot(EPropertiesNames.FAILED_TESTS);
+        
+    }
+
+    public void takeEvidenceScreenShot()
+    {
+        if (generateEvidence) {
+            takeScreenShot(EPropertiesNames.PATH_EVIDENCE, screenID);
+            screenID++;
+        }
+    }
+    
+    public void takeFailedReportScreenShot()
+    {
+    	takeScreenShot(EPropertiesNames.FAILED_REPORTS, screenID);
+    	screenID++;
+    }
+
+    private void takeScreenShot(EPropertiesNames path, Integer... screenID)
+    {
+        // Directorio donde quedaran las imagenes guardadas
+       
+        String testClassName = accesoWeb.getTestClass();
+        String testMethodName = accesoWeb.getTestMethod();
+        File directory = createFolder(path, testClassName);
+        try {
+            // Toma la captura de imagen
+            File imagen = ((TakesScreenshot) accesoWeb.getDriver()).getScreenshotAs(OutputType.FILE);
+            StringBuilder sb = new StringBuilder(directory.getAbsolutePath());
+            sb.append("\\");
+            sb.append(testMethodName);
+            if (screenID.length > 0) {
+                sb.append("_");
+                sb.append(screenID[0]);
+            }
+            sb.append(".png");
+            FileUtils.copyFile(imagen, new File(sb.toString()));
+            logger.info("Screenshot taken: " + testMethodName);
+        } catch (IOException e) {
+            logger.error("Error taking screenshot on error", e);
+        }
+    }
+
+    private File createFolder(EPropertiesNames folderPath, String testClass)
+    {
+        String path = PropertiesManager.getInstance().getProperty(folderPath);
+        File directoryDate = new File(path  + "\\" + testClass);
+        try {
+            if (!directoryDate.isDirectory()) {
+                directoryDate.mkdirs();
+            }
+        } catch (Exception e) {
+            logger.error("Error creating screenshot directory", e);
+        }
+        return directoryDate;
+    }
+
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteStaffOffice">
+	<test name = "TestStaffOffice">
+	<parameter name="testName" value="TestStaffOffice" />
+    	<classes>  		
+    		<class name = "test.TestStaffOffice" >
+    			<methods>
+	        		<include name = "validateUI" >
+	        			<parameter name="testLinkName" value="test validateUI"/>
+	        		</include>
+	        		<include name="validateAddOfficeRightData">
+	        			<parameter name="testLinkName" value="test validateAddOfficeRightData "/>
+	        		</include>
+	        		<include name="validateAddOfficeEmptyData">
+	        			<parameter name="testLinkName" value="test validateAddOfficeEmptyData"></parameter>
+	        		</include>
+	        		<include name="validateOfficeUnique">
+	        			<parameter name="testLinkName" value="test validateOfficeUnique"></parameter>
+	        		</include>
+	        		<include name="validateOfficeUnique">
+	        			<parameter name="testLinkName" value="test validateOfficeUnique"></parameter>
+	        		</include>
+	        		<include name="deleteOffice">
+	        			<parameter name="testLinkName" value="test deleteOffice"></parameter>
+	        		</include>
+	        		<include name="cancelDeleteOffice">
+	        			<parameter name="testLinkName" value="test cancelDeleteOffice"></parameter>
+	        		</include>
+	      		</methods>
+	      	</class>  
+		</classes>
+	</test>
+</suite>

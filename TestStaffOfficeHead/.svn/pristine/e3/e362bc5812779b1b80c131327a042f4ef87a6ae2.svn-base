@@ -1,0 +1,21 @@
+package properties;
+
+public enum EPropertiesNames {
+	
+	    
+	    PATH_LOGS,
+	    PATH_EVIDENCE,
+	    USER,
+	    PASSWORD,
+	    IP,
+	    PUERTO,	    
+	    USER_TEST,
+	    PASS_TEST,
+	    USER_WF,
+	    PASS_WF,
+	    FAILED_REPORTS,
+	    FAILED_TESTS
+
+	
+
+}

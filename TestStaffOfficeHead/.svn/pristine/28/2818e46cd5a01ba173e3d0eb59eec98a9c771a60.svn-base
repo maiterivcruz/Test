@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [SuiteStaffOffice]">
+  <parameter name="testName" value="TestStaffOffice"/>
+  <test name="TestStaffOffice(failed)">
+    <parameter name="testName" value="TestStaffOffice"/>
+    <classes>
+      <class name="test.TestStaffOffice">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="deleteOffice">
+            <parameter name="testLinkName" value="test deleteOffice"/>
+          </include> <!-- deleteOffice -->
+          <include name="handleTestMethodName"/>
+        </methods>
+      </class> <!-- test.TestStaffOffice -->
+    </classes>
+  </test> <!-- TestStaffOffice(failed) -->
+</suite> <!-- Failed suite [SuiteStaffOffice] -->

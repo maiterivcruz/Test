@@ -1,0 +1,26 @@
+package test.controller;
+
+import test.pageobject.StaffOfficePO;
+import util.AbstractPageTest;
+import util.WebAccess;
+
+public class StaffOffice extends AbstractPageTest  {
+
+	public StaffOffice(WebAccess accesoWeb) {
+		super(accesoWeb);
+		// TODO Auto-generated constructor stub
+	}
+	public void checkUI(){
+		//office 
+		validator.validate(StaffOfficePO.inputNameOffice)
+					.validate(StaffOfficePO.btnAddOffice)
+					.validate(StaffOfficePO.btnDeleteOffice)
+					.validate(StaffOfficePO.rowNameOffice)
+					.validate(StaffOfficePO.rowChkOffice);
+		//staff
+		
+	}
+
+	
+
+}

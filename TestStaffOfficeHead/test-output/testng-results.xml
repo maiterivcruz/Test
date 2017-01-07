@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="2" total="9" passed="7">
+  <reporter-output>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST PASSED]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)]]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST PASSED]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)]]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST PASSED]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Expected: 4 but found: 5]]>
+    </line>
+    <line>
+      <![CDATA[<br>**Here failed the test**]]>
+    </line>
+    <line>
+      <![CDATA[<br><img src='Screenshots\testvalidateAddOfficeEqualSpace\imgThuJan05203307EST2017.jpg' width='70%' height='70%'/>]]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST FAILED]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)]]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST PASSED]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST PASSED]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmModalOff > div.modal-content > div.modal-footer > button)]]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST PASSED]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST PASSED]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+    </line>
+    <line>
+      <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteStaff)]]>
+    </line>
+    <line>
+      <![CDATA[<br>**Here failed the test**]]>
+    </line>
+    <line>
+      <![CDATA[<br><img src='Screenshots\testvalidateDeleteOfficeWithoutAvailableOFF\imgThuJan05203533EST2017.jpg' width='70%' height='70%'/>]]>
+    </line>
+    <line>
+      <![CDATA[<p>TEST FAILED]]>
+    </line>
+  </reporter-output>
+  <suite name="SuiteStaffOffice" duration-ms="238510" started-at="2017-01-06T01:31:36Z" finished-at="2017-01-06T01:35:35Z">
+    <groups>
+    </groups>
+    <test name="TestOffice" duration-ms="238510" started-at="2017-01-06T01:31:36Z" finished-at="2017-01-06T01:35:35Z">
+      <class name="test.TestOffice">
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="17514" started-at="2017-01-05T20:31:36Z" finished-at="2017-01-05T20:31:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateUI(java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test validateUI]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="validateUI(java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="validateUI" duration-ms="1493" started-at="2017-01-05T20:31:54Z" finished-at="2017-01-05T20:31:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test validateUI]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p>TEST PASSED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateUI -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="2336" started-at="2017-01-05T20:31:55Z" finished-at="2017-01-05T20:31:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateUI status=SUCCESS method=TestOffice.validateUI(java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94] output=<p>TEST PASSED]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="12577" started-at="2017-01-05T20:31:57Z" finished-at="2017-01-05T20:32:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateAddOfficeRightData()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test validateAddOfficeRightData ]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="validateAddOfficeRightData()[pri:0, instance:test.TestOffice@5b87ed94]" name="validateAddOfficeRightData" duration-ms="11928" started-at="2017-01-05T20:32:10Z" finished-at="2017-01-05T20:32:22Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)]]>
+            </line>
+            <line>
+              <![CDATA[<p>TEST PASSED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateAddOfficeRightData -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="1583" started-at="2017-01-05T20:32:22Z" finished-at="2017-01-05T20:32:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateAddOfficeRightData status=SUCCESS method=TestOffice.validateAddOfficeRightData()[pri:0, instance:test.TestOffice@5b87ed94] output=<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="11011" started-at="2017-01-05T20:32:24Z" finished-at="2017-01-05T20:32:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateAddOfficeEmptyData()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test validateAddOfficeEmptyData]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="validateAddOfficeEmptyData()[pri:0, instance:test.TestOffice@5b87ed94]" name="validateAddOfficeEmptyData" duration-ms="10496" started-at="2017-01-05T20:32:35Z" finished-at="2017-01-05T20:32:45Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)]]>
+            </line>
+            <line>
+              <![CDATA[<p>TEST PASSED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateAddOfficeEmptyData -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="1297" started-at="2017-01-05T20:32:45Z" finished-at="2017-01-05T20:32:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateAddOfficeEmptyData status=SUCCESS method=TestOffice.validateAddOfficeEmptyData()[pri:0, instance:test.TestOffice@5b87ed94] output=<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="7771" started-at="2017-01-05T20:32:46Z" finished-at="2017-01-05T20:32:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateAddOfficeEqualSpace()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test validateAddOfficeEqualSpace]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="FAIL" signature="validateAddOfficeEqualSpace()[pri:0, instance:test.TestOffice@5b87ed94]" name="validateAddOfficeEqualSpace" duration-ms="12834" started-at="2017-01-05T20:32:54Z" finished-at="2017-01-05T20:33:07Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected:<4> but was:<5>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected:<4> but was:<5>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at test.TestOffice.validateAddOfficeEqualSpace(TestOffice.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Expected: 4 but found: 5]]>
+            </line>
+            <line>
+              <![CDATA[<br>**Here failed the test**]]>
+            </line>
+            <line>
+              <![CDATA[<br><img src='Screenshots\testvalidateAddOfficeEqualSpace\imgThuJan05203307EST2017.jpg' width='70%' height='70%'/>]]>
+            </line>
+            <line>
+              <![CDATA[<p>TEST FAILED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateAddOfficeEqualSpace -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="2287" started-at="2017-01-05T20:33:07Z" finished-at="2017-01-05T20:33:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateAddOfficeEqualSpace status=FAILURE method=TestOffice.validateAddOfficeEqualSpace()[pri:0, instance:test.TestOffice@5b87ed94] output=<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="9274" started-at="2017-01-05T20:33:09Z" finished-at="2017-01-05T20:33:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateOfficeUnique() throws org.json.JSONException]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test validateOfficeUnique]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="validateOfficeUnique()[pri:0, instance:test.TestOffice@5b87ed94]" name="validateOfficeUnique" duration-ms="10632" started-at="2017-01-05T20:33:19Z" finished-at="2017-01-05T20:33:29Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)]]>
+            </line>
+            <line>
+              <![CDATA[<p>TEST PASSED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateOfficeUnique -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="1448" started-at="2017-01-05T20:33:29Z" finished-at="2017-01-05T20:33:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateOfficeUnique status=SUCCESS method=TestOffice.validateOfficeUnique()[pri:0, instance:test.TestOffice@5b87ed94] output=<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="8486" started-at="2017-01-05T20:33:31Z" finished-at="2017-01-05T20:33:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateDeleteOffice() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test deleteOffice]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="validateDeleteOffice()[pri:0, instance:test.TestOffice@5b87ed94]" name="validateDeleteOffice" duration-ms="12354" started-at="2017-01-05T20:33:39Z" finished-at="2017-01-05T20:33:52Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+            </line>
+            <line>
+              <![CDATA[<p>TEST PASSED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateDeleteOffice -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="1284" started-at="2017-01-05T20:33:52Z" finished-at="2017-01-05T20:33:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateDeleteOffice status=SUCCESS method=TestOffice.validateDeleteOffice()[pri:0, instance:test.TestOffice@5b87ed94] output=<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="8996" started-at="2017-01-05T20:33:53Z" finished-at="2017-01-05T20:34:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateCancelDeleteOffice() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test cancelDeleteOffice]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="validateCancelDeleteOffice()[pri:0, instance:test.TestOffice@5b87ed94]" name="validateCancelDeleteOffice" duration-ms="13150" started-at="2017-01-05T20:34:02Z" finished-at="2017-01-05T20:34:15Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmModalOff > div.modal-content > div.modal-footer > button)]]>
+            </line>
+            <line>
+              <![CDATA[<p>TEST PASSED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateCancelDeleteOffice -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="1580" started-at="2017-01-05T20:34:15Z" finished-at="2017-01-05T20:34:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateCancelDeleteOffice status=SUCCESS method=TestOffice.validateCancelDeleteOffice()[pri:0, instance:test.TestOffice@5b87ed94] output=<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="9729" started-at="2017-01-05T20:34:17Z" finished-at="2017-01-05T20:34:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateDeleteOfficeNotSelected()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test validateDeleteOfficeNotSelected]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="PASS" signature="validateDeleteOfficeNotSelected()[pri:0, instance:test.TestOffice@5b87ed94]" name="validateDeleteOfficeNotSelected" duration-ms="5138" started-at="2017-01-05T20:34:26Z" finished-at="2017-01-05T20:34:31Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+            </line>
+            <line>
+              <![CDATA[<p>TEST PASSED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateDeleteOfficeNotSelected -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="1385" started-at="2017-01-05T20:34:31Z" finished-at="2017-01-05T20:34:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateDeleteOfficeNotSelected status=SUCCESS method=TestOffice.validateDeleteOfficeNotSelected()[pri:0, instance:test.TestOffice@5b87ed94] output=<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+        <test-method status="PASS" signature="handleTestMethodName(java.lang.reflect.Method, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.TestOffice@5b87ed94]" name="handleTestMethodName" is-config="true" duration-ms="7622" started-at="2017-01-05T20:34:33Z" finished-at="2017-01-05T20:34:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void test.TestOffice.validateDeleteOfficeWithoutAvailableOFF()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestOffice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test validateDeleteOfficeWithoutAvailableOFF]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- Go to:'http://localhost:8080/javascript/index.html']]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method status="FAIL" signature="validateDeleteOfficeWithoutAvailableOFF()[pri:0, instance:test.TestOffice@5b87ed94]" name="validateDeleteOfficeWithoutAvailableOFF" duration-ms="52584" started-at="2017-01-05T20:34:41Z" finished-at="2017-01-05T20:35:33Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [There are not offices.] but found [Please select at least one member to remove.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [There are not offices.] but found [Please select at least one member to remove.]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at test.controller.StaffOffice.deleteOffWithoutAvailableOff(StaffOffice.java:110)
+	at test.TestOffice.validateDeleteOfficeWithoutAvailableOFF(TestOffice.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)]]>
+            </line>
+            <line>
+              <![CDATA[<br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteStaff)]]>
+            </line>
+            <line>
+              <![CDATA[<br>**Here failed the test**]]>
+            </line>
+            <line>
+              <![CDATA[<br><img src='Screenshots\testvalidateDeleteOfficeWithoutAvailableOFF\imgThuJan05203533EST2017.jpg' width='70%' height='70%'/>]]>
+            </line>
+            <line>
+              <![CDATA[<p>TEST FAILED]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validateDeleteOfficeWithoutAvailableOFF -->
+        <test-method status="PASS" signature="commonAfterTestMethod(java.lang.String, org.testng.ITestResult)[pri:0, instance:test.TestOffice@5b87ed94]" name="commonAfterTestMethod" is-config="true" duration-ms="1498" started-at="2017-01-05T20:35:33Z" finished-at="2017-01-05T20:35:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=validateDeleteOfficeWithoutAvailableOFF status=FAILURE method=TestOffice.validateDeleteOfficeWithoutAvailableOFF()[pri:0, instance:test.TestOffice@5b87ed94] output=<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commonAfterTestMethod -->
+      </class> <!-- test.TestOffice -->
+    </test> <!-- TestOffice -->
+  </suite> <!-- SuiteStaffOffice -->
+</testng-results>

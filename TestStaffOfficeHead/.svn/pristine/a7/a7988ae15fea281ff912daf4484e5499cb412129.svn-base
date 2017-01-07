@@ -1,0 +1,34 @@
+package test.pageobject;
+
+import org.openqa.selenium.By;
+
+import elements.ESelectorType;
+import elements.IElementView;
+
+public enum StaffOfficePO implements IElementView{
+	inputNameOffice("#nameOff"),
+    btnAddOffice("#submitOff");
+	
+    private final By selector;
+	private final String stringSelector;
+	
+	private StaffOfficePO(String selector, ESelectorType... selectorType){
+		if(selectorType.length>0){
+			this.selector = selectorType[0].getSelector(selector);
+		}else{
+			this.selector = ESelectorType.CSS_SELECTOR.getSelector(selector);
+		}		
+		this.stringSelector = selector; 
+	}
+
+	public By getSelector() {
+		// TODO Auto-generated method stub
+		return selector;
+	}
+
+	public String getElementDescription() {
+		// TODO Auto-generated method stub
+		return stringSelector;
+	}
+	
+}

@@ -1,0 +1,28 @@
+package test;
+import java.lang.reflect.Method;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import test.controller.StaffOffice;
+import test.pageobject.StaffOfficePO;
+import util.WebAccess;
+
+
+
+public class TestStaffOffice extends WebAccess{
+	@Parameters({"testName", "testLinkName" })
+	@Test
+	public void checkUI(String testName, String testLinkName){
+		/*1-Check UI*/
+		//go page
+		driver.get("file:///C:/Users/maite/OneDrive/Documentos/Studies/StudyCaseSelenium/AddielRodriguezJavaScriptTestTask/javascript/index.html");
+
+		//check element
+		StaffOffice staffOff=new StaffOffice(this);
+		staffOff.checkUI();
+	}
+
+
+
+}

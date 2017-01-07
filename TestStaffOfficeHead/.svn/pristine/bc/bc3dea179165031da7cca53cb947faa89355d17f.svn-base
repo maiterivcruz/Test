@@ -1,0 +1,7 @@
+<h2>Methods that were not run</h2><table>
+<tr><td>test.TestStaffOffice.validateAddOfficeEmptyData</td></tr>
+<tr><td>test.TestStaffOffice.validateAddOfficeRightData</td></tr>
+<tr><td>test.TestStaffOffice.deleteOffice</td></tr>
+<tr><td>test.TestStaffOffice.validateUI</td></tr>
+<tr><td>test.TestStaffOffice.validateOfficeUnique</td></tr>
+</table>

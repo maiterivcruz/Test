@@ -1,0 +1,252 @@
+package elements;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import org.openqa.selenium.NoSuchElementException;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import util.Constants;
+
+public class ValidateElement {
+
+	private static final Logger logger = Logger.getLogger(ValidateElement.class);
+
+	private WebDriver driver;
+	private List<IElementView> invisibleElements;
+
+	// oculto contructor
+	private ValidateElement(WebDriver driver) {
+		this.driver = driver;
+		this.invisibleElements = new ArrayList<IElementView>();
+	}
+
+	public static ValidateElement with(WebDriver driver) {
+		return new ValidateElement(driver);
+	}
+
+	public ValidateElement validateElementVisible(IElementView... elements) throws Exception {
+		if (elements.length > 0) {
+			for (IElementView elem : elements) {
+				if (!isElementPresent(driver, elem.getSelector(), Constants.TimeOut5Segundos)) {
+					this.invisibleElements.add(elem);
+				}
+			}
+		}
+		return this;
+	}
+
+	public ValidateElement validate(IElementView... elements) {
+		try {
+			if (elements.length > 0) {
+				for (IElementView elem : elements) {
+					if (!isElementPresentAndDisplayed(driver, elem.getSelector())) {
+
+						this.invisibleElements.add(elem);
+					}
+					else{
+						logger.info(elem.getElementDescription()+"is displayed");
+
+					}
+				}
+			}
+		} catch (NoSuchElementException e) {
+
+		}
+		return this;
+	}
+
+	public ValidateElement elementNotPresent(IElementView... elements) {
+		if (elements.length > 0) {
+			for (IElementView elem : elements) {
+				if (isElementPresentAndDisplayed(driver, elem.getSelector())) {
+					this.invisibleElements.add(elem);
+				}
+			}
+		}
+		return this;
+	}
+
+	public ValidateElement validateElementTextIsPresentJS(IElementView elements, String pStr) {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		Boolean result = Boolean.parseBoolean(jse.executeScript("return $(arguments[0]).text() === arguments[1];",
+				driver.findElement(elements.getSelector()), pStr).toString());
+		if (!result) {
+			this.invisibleElements.add(elements);
+		}
+		return this;
+	}
+
+	public ValidateElement validateElementTextIsPresentJSAttr(IElementView elements, String pAttr, String pStr) {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		Boolean result = Boolean.parseBoolean(jse.executeScript("return $(arguments[0]).text() === arguments[1];",
+				driver.findElement(elements.getSelector()).getAttribute(pAttr), pStr).toString());
+		if (!result) {
+			this.invisibleElements.add(elements);
+		}
+		return this;
+	}
+
+	public ValidateElement validateElementTextIsPresent(IElementView elements, String pStr) {
+		if (!driver.findElement(elements.getSelector()).getText().trim().equalsIgnoreCase(pStr)) {
+			this.invisibleElements.add(elements);
+		}
+		return this;
+	}
+
+	public ValidateElement validateElementContainsText(IElementView element, String pAttr, String pStr) {
+		if (!driver.findElement(element.getSelector()).getAttribute(pAttr).contains(pStr)) {
+			this.invisibleElements.add(element);
+		}
+		return this;
+	}
+
+	public ValidateElement validateElementContainsText(IElementView element, String pStr) {
+		if (!driver.findElement(element.getSelector()).getText().contains(pStr)) {
+			this.invisibleElements.add(element);
+		}
+		return this;
+	}
+
+	public ValidateElement validateElementTextIsNotPresent(IElementView elements, String pStr) {
+		if (driver.findElement(elements.getSelector()).getText().equalsIgnoreCase(pStr)) {
+			this.invisibleElements.add(elements);
+		}
+		return this;
+	}
+
+	/**
+	 * Valida que cierto texto en el DOM
+	 * 
+	 * @param pStr
+	 * @return
+	 */
+	public ValidateElement validateIsTextPresent(IElementView element) {
+		if (!driver.getPageSource().contains(driver.findElement(element.getSelector()).getText().trim())) {
+			this.invisibleElements.add(element);
+		}
+		return this;
+	}
+
+	public String getErrorMessages() {
+		if (invisibleElements.size() > 0) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("Error validando elementos \n");
+			for (IElementView elem : invisibleElements) {
+				sb.append("Elemento no encontrado:");
+				sb.append(elem.getElementDescription());
+				sb.append("\n");
+			}
+			return sb.toString();
+		} else {
+			return null;
+		}
+	}
+
+	public boolean hasErrors() {
+
+		boolean valid = this.invisibleElements.size() > 0;
+		if (!valid) {
+			logger.info("...Test se ejecuto correctamente...");
+		}
+		return valid;
+	}
+
+	public static boolean isElementPresentAndDisplayed(WebDriver driver, final By byLocator) {
+		try {
+			return driver.findElement(byLocator).isDisplayed();
+		} catch (NoSuchElementException ex) {
+			return false;
+		}
+
+	}
+
+	public static boolean isElementPresent(WebDriver driver, final By byLocator, int seconds) throws Exception {
+		try {
+			(new WebDriverWait(driver, seconds)).until(new ExpectedCondition<WebElement>() {
+				@Override
+				public WebElement apply(WebDriver d) {
+					return d.findElement(byLocator);
+				}
+			});
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
+	}
+
+	public boolean checkForElement(final By locator) throws Exception {
+		return isElementPresent(driver, locator, 5);
+	}
+
+	public void clear() {
+		this.invisibleElements.clear();
+	}
+
+	public static boolean validateAgainstDB(List<Map<String, String>> dbData, List<WebElement> elements,
+			int indexToStart, String... columnsName) {
+
+		// validamos que la cantidad de filas de la base sea mayor que la de la
+		// vista
+		if (elements.size() < dbData.size() - indexToStart) {
+			System.out.println("dbData size:: " + dbData.size() + "     indexToStart:: " + indexToStart
+					+ "      elements size:: " + elements.size());
+			System.out.println("entre al primer iffff");
+			// ver aca que hacemos con el error
+			return false;
+		}
+		int rowIndex = indexToStart;
+		// todas las filas
+		for (WebElement elem : elements) {
+			List<WebElement> tds = elem.findElements(null); // find td
+			// validar cantidad de tds concide con columnsName
+			if (tds.size() != columnsName.length) {
+				System.out.println("se partio acaaaaaaaaa");
+				// error
+				return false;
+			}
+
+			Map<String, String> dbRow = dbData.get(rowIndex);
+			int fieldIndex = 0;
+			for (WebElement td : elements) {
+				String value = td.getText();
+				String colName = columnsName[fieldIndex];
+				String valueDb = dbRow.get(colName);
+				if (!value.contains(valueDb)) {
+					// error
+					return false;
+				}
+				rowIndex++;
+				fieldIndex++;
+			}
+
+		}
+
+		return true;
+	}
+
+	/**
+	 * @param metodo
+	 *            que retorna un elemento de un compenente css, recibe el
+	 *            elemento
+	 * @param pStr
+	 * @author DahianaR1
+	 * @return
+	 */
+	public ValidateElement mostrarElemento(IElementView elements, String pStr) {
+		String elem = driver.findElement(elements.getSelector()).getText().trim();
+		if (!driver.findElement(elements.getSelector()).getText().trim().equalsIgnoreCase(pStr)) {
+			this.invisibleElements.add(elements);
+		}
+		System.out.println("El elemento es: " + elem);
+		return this;
+
+	}
+}

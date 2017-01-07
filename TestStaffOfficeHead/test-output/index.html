@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-SuiteStaffOffice">
+              <span class="suite-name border-failed">SuiteStaffOffice</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-SuiteStaffOffice">
+                    <span>C:\Users\maite\workspace\TestStaffOfficeHead\src\main\resources\runtest\staffOffice.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-SuiteStaffOffice">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-SuiteStaffOffice">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-SuiteStaffOffice">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-SuiteStaffOffice">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-SuiteStaffOffice">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-SuiteStaffOffice">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">9 methods, 2 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-SuiteStaffOffice" class="hide-methods failed suite-SuiteStaffOffice"> (hide)</a> <!-- hide-methods failed suite-SuiteStaffOffice -->
+                      <a href="#" panel-name="suite-SuiteStaffOffice" class="show-methods failed suite-SuiteStaffOffice"> (show)</a> <!-- show-methods failed suite-SuiteStaffOffice -->
+                    </span>
+                    <div class="method-list-content failed suite-SuiteStaffOffice">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateAddOfficeEqualSpace">validateAddOfficeEqualSpace</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateDeleteOfficeWithoutAvailableOFF">validateDeleteOfficeWithoutAvailableOFF</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-SuiteStaffOffice -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-SuiteStaffOffice" class="hide-methods passed suite-SuiteStaffOffice"> (hide)</a> <!-- hide-methods passed suite-SuiteStaffOffice -->
+                      <a href="#" panel-name="suite-SuiteStaffOffice" class="show-methods passed suite-SuiteStaffOffice"> (show)</a> <!-- show-methods passed suite-SuiteStaffOffice -->
+                    </span>
+                    <div class="method-list-content passed suite-SuiteStaffOffice">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateAddOfficeEmptyData">validateAddOfficeEmptyData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateAddOfficeRightData">validateAddOfficeRightData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateCancelDeleteOffice">validateCancelDeleteOffice</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateDeleteOffice">validateDeleteOffice</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateDeleteOfficeNotSelected">validateDeleteOfficeNotSelected</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateOfficeUnique">validateOfficeUnique</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SuiteStaffOffice" title="test.TestOffice" hash-for-method="validateUI(TestOffice, test validateUI)">validateUI(TestOffice, test validateUI)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-SuiteStaffOffice -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-SuiteStaffOffice" class="panel SuiteStaffOffice">
+          <div class="suite-SuiteStaffOffice-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.TestOffice</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateAddOfficeEqualSpace">
+                  </a> <!-- validateAddOfficeEqualSpace -->
+                  <span class="method-name">validateAddOfficeEqualSpace</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected:&lt;4&gt; but was:&lt;5&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at test.TestOffice.validateAddOfficeEqualSpace(TestOffice.java:52)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateDeleteOfficeWithoutAvailableOFF">
+                  </a> <!-- validateDeleteOfficeWithoutAvailableOFF -->
+                  <span class="method-name">validateDeleteOfficeWithoutAvailableOFF</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [There are not offices.] but found [Please select at least one member to remove.]
+	at test.controller.StaffOffice.deleteOffWithoutAvailableOff(StaffOffice.java:110)
+	at test.TestOffice.validateDeleteOfficeWithoutAvailableOFF(TestOffice.java:97)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SuiteStaffOffice-class-failed -->
+          <div class="suite-SuiteStaffOffice-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.TestOffice</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateAddOfficeEmptyData">
+                  </a> <!-- validateAddOfficeEmptyData -->
+                  <span class="method-name">validateAddOfficeEmptyData</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateAddOfficeRightData">
+                  </a> <!-- validateAddOfficeRightData -->
+                  <span class="method-name">validateAddOfficeRightData</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateCancelDeleteOffice">
+                  </a> <!-- validateCancelDeleteOffice -->
+                  <span class="method-name">validateCancelDeleteOffice</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateDeleteOffice">
+                  </a> <!-- validateDeleteOffice -->
+                  <span class="method-name">validateDeleteOffice</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateDeleteOfficeNotSelected">
+                  </a> <!-- validateDeleteOfficeNotSelected -->
+                  <span class="method-name">validateDeleteOfficeNotSelected</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateOfficeUnique">
+                  </a> <!-- validateOfficeUnique -->
+                  <span class="method-name">validateOfficeUnique</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateUI(TestOffice, test validateUI)">
+                  </a> <!-- validateUI(TestOffice, test validateUI) -->
+                  <span class="method-name">validateUI</span>
+                  <span class="parameters">(TestOffice, test validateUI)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SuiteStaffOffice-class-passed -->
+        </div> <!-- panel SuiteStaffOffice -->
+        <div panel-name="test-xml-SuiteStaffOffice" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\maite\workspace\TestStaffOfficeHead\src\main\resources\runtest\staffOffice.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;SuiteStaffOffice&quot;&gt;
+  &lt;test name=&quot;TestOffice&quot;&gt;
+    &lt;parameter name=&quot;environment&quot; value=&quot;local&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;parameter name=&quot;testName&quot; value=&quot;TestOffice&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;test.TestOffice&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;validateUI&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test validateUI&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateUI --&gt;
+          &lt;include name=&quot;validateAddOfficeRightData&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test validateAddOfficeRightData &quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateAddOfficeRightData --&gt;
+          &lt;include name=&quot;validateAddOfficeEmptyData&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test validateAddOfficeEmptyData&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateAddOfficeEmptyData --&gt;
+          &lt;include name=&quot;validateAddOfficeEqualSpace&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test validateAddOfficeEqualSpace&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateAddOfficeEqualSpace --&gt;
+          &lt;include name=&quot;validateOfficeUnique&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test validateOfficeUnique&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateOfficeUnique --&gt;
+          &lt;include name=&quot;validateOfficeUnique&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test validateOfficeUnique&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateOfficeUnique --&gt;
+          &lt;include name=&quot;validateDeleteOffice&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test deleteOffice&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateDeleteOffice --&gt;
+          &lt;include name=&quot;validateCancelDeleteOffice&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test cancelDeleteOffice&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateCancelDeleteOffice --&gt;
+          &lt;include name=&quot;validateDeleteOfficeNotSelected&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test validateDeleteOfficeNotSelected&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateDeleteOfficeNotSelected --&gt;
+          &lt;include name=&quot;validateDeleteOfficeWithoutAvailableOFF&quot;&gt;
+            &lt;parameter name=&quot;testLinkName&quot; value=&quot;test validateDeleteOfficeWithoutAvailableOFF&quot;/&gt;
+          &lt;/include&gt; &lt;!-- validateDeleteOfficeWithoutAvailableOFF --&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- test.TestOffice --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- TestOffice --&gt;
+&lt;/suite&gt; &lt;!-- SuiteStaffOffice --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-SuiteStaffOffice" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for SuiteStaffOffice</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">TestOffice (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-SuiteStaffOffice" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for SuiteStaffOffice</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-SuiteStaffOffice" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for SuiteStaffOffice</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_SuiteStaffOffice');
+function tableData_SuiteStaffOffice() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(9);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'validateDeleteOfficeWithoutAvailableOFF')
+data.setCell(0, 2, 'test.TestOffice')
+data.setCell(0, 3, 52584);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validateCancelDeleteOffice')
+data.setCell(1, 2, 'test.TestOffice')
+data.setCell(1, 3, 13150);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'validateAddOfficeEqualSpace')
+data.setCell(2, 2, 'test.TestOffice')
+data.setCell(2, 3, 12834);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'validateDeleteOffice')
+data.setCell(3, 2, 'test.TestOffice')
+data.setCell(3, 3, 12354);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'validateAddOfficeRightData')
+data.setCell(4, 2, 'test.TestOffice')
+data.setCell(4, 3, 11928);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'validateOfficeUnique')
+data.setCell(5, 2, 'test.TestOffice')
+data.setCell(5, 3, 10632);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'validateAddOfficeEmptyData')
+data.setCell(6, 2, 'test.TestOffice')
+data.setCell(6, 3, 10496);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'validateDeleteOfficeNotSelected')
+data.setCell(7, 2, 'test.TestOffice')
+data.setCell(7, 3, 5138);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'validateUI')
+data.setCell(8, 2, 'test.TestOffice')
+data.setCell(8, 3, 1493);
+window.suiteTableData['SuiteStaffOffice']= { tableData: data, tableDiv: 'times-div-SuiteStaffOffice'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <div id="times-div-SuiteStaffOffice">
+              </div> <!-- times-div-SuiteStaffOffice -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-SuiteStaffOffice" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for SuiteStaffOffice</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateDeleteOffice</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)</span>
+                <span class="reporter-method-output"><p>TEST PASSED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateOfficeUnique</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)</span>
+                <span class="reporter-method-output"><p>TEST PASSED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateAddOfficeRightData</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)</span>
+                <span class="reporter-method-output"><p>TEST PASSED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateUI(TestOffice, test validateUI)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><p>TEST PASSED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateAddOfficeEmptyData</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)</span>
+                <span class="reporter-method-output"><p>TEST PASSED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateCancelDeleteOffice</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmModalOff > div.modal-content > div.modal-footer > button)</span>
+                <span class="reporter-method-output"><p>TEST PASSED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateDeleteOfficeNotSelected</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)</span>
+                <span class="reporter-method-output"><p>TEST PASSED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateDeleteOfficeWithoutAvailableOFF</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #dataConfirmOK)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #deleteStaff)</span>
+                <span class="reporter-method-output"><br>**Here failed the test**</span>
+                <span class="reporter-method-output"><br><img src='Screenshots\testvalidateDeleteOfficeWithoutAvailableOFF\imgThuJan05203533EST2017.jpg' width='70%' height='70%'/></span>
+                <span class="reporter-method-output"><p>TEST FAILED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validateAddOfficeEqualSpace</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found (By.cssSelector: #officesList > tr > td:nth-child(2)>input)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #nameOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- CLICK in (By.cssSelector: #submitOff)</span>
+                <span class="reporter-method-output"><br>&nbsp;&nbsp;&nbsp;- Expected: 4 but found: 5</span>
+                <span class="reporter-method-output"><br>**Here failed the test**</span>
+                <span class="reporter-method-output"><br><img src='Screenshots\testvalidateAddOfficeEqualSpace\imgThuJan05203307EST2017.jpg' width='70%' height='70%'/></span>
+                <span class="reporter-method-output"><p>TEST FAILED</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-SuiteStaffOffice" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-SuiteStaffOffice" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.TestOffice</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateUI(java.lang.String,java.lang.String), TestOffice, test validate...)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateUI(TestOffice, test validateUI)</span>
+                <span class="method-start">17515 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateUI status=SUCCESS method=TestOffice.validateUI(java.lang.String, j...)</span>
+                <span class="method-start">19010 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateAddOfficeRightData(), TestOffice, test validateAddOfficeRightDat...)</span>
+                <span class="method-start">21347 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateAddOfficeRightData</span>
+                <span class="method-start">33924 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateAddOfficeRightData status=SUCCESS method=TestOffice.validateAddOff...)</span>
+                <span class="method-start">45853 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateAddOfficeEmptyData(), TestOffice, test validateAddOfficeEmptyDat...)</span>
+                <span class="method-start">47436 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateAddOfficeEmptyData</span>
+                <span class="method-start">58447 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateAddOfficeEmptyData status=SUCCESS method=TestOffice.validateAddOff...)</span>
+                <span class="method-start">68944 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateAddOfficeEqualSpace(), TestOffice, test validateAddOfficeEqualSp...)</span>
+                <span class="method-start">70242 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validateAddOfficeEqualSpace</span>
+                <span class="method-start">78013 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateAddOfficeEqualSpace status=FAILURE method=TestOffice.validateAddOf...)</span>
+                <span class="method-start">91021 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateOfficeUnique() throws org.json.JSONException, TestOffice, test v...)</span>
+                <span class="method-start">93309 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateOfficeUnique</span>
+                <span class="method-start">102583 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateOfficeUnique status=SUCCESS method=TestOffice.validateOfficeUnique...)</span>
+                <span class="method-start">113217 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateDeleteOffice() throws java.lang.InterruptedException, TestOffice...)</span>
+                <span class="method-start">114665 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateDeleteOffice</span>
+                <span class="method-start">123151 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateDeleteOffice status=SUCCESS method=TestOffice.validateDeleteOffice...)</span>
+                <span class="method-start">135508 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateCancelDeleteOffice() throws java.lang.InterruptedException, Test...)</span>
+                <span class="method-start">136792 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateCancelDeleteOffice</span>
+                <span class="method-start">145788 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateCancelDeleteOffice status=SUCCESS method=TestOffice.validateCancel...)</span>
+                <span class="method-start">158939 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateDeleteOfficeNotSelected(), TestOffice, test validateDeleteOffice...)</span>
+                <span class="method-start">160520 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateDeleteOfficeNotSelected</span>
+                <span class="method-start">170249 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateDeleteOfficeNotSelected status=SUCCESS method=TestOffice.validateD...)</span>
+                <span class="method-start">175388 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void test.TestOffice.validateDeleteOfficeWithoutAvailableOFF(), TestOffice, test validateDele...)</span>
+                <span class="method-start">176774 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validateDeleteOfficeWithoutAvailableOFF</span>
+                <span class="method-start">184396 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">commonAfterTestMethod(firefox, [TestResult name=validateDeleteOfficeWithoutAvailableOFF status=FAILURE method=TestOffice.v...)</span>
+                <span class="method-start">236987 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

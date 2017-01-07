@@ -1,0 +1,10 @@
+package properties;
+
+
+public enum EPropertiesDB {
+
+	DB_URL,
+	ISSUER_USER,
+	ACQUIRER_USER,
+	DB_PASS,
+}

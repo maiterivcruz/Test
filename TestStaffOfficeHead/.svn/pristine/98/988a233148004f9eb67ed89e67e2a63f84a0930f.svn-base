@@ -1,0 +1,109 @@
+package util;
+
+import java.lang.reflect.Method;
+
+import org.apache.log4j.FileAppender;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import properties.EPropertiesNames;
+import properties.PropertiesManager;
+
+
+
+//@Listeners(OnFailureListener.class)
+public class WebAcces {
+	
+		protected WebDriver driver;		
+
+		private static String DRIVER_PATH_PROPERTY_NAME = "webdriver.chrome.driver";
+		private static String DRIVER_PATH = "driver/chromedriver.exe";
+		private String testClass;
+	    private String testName;
+	    private String testMethod;
+	    private String testLinkName;
+	    private ScreenShotManager ssManager;
+	    
+	    @Parameters({"testName", "testLinkName"})
+	    @BeforeMethod
+	    public void handleTestMethodName(Method method, String testName, String testLinkName) throws Exception
+	    {
+	    	
+	        this.testName = testName;
+	        this.testLinkName = testLinkName;
+	        this.testMethod = method.getName();
+	        this.testClass = method.getDeclaringClass().getSimpleName();
+	        initSelenium();
+	        
+	      
+	    }
+	    public WebAcces(){
+			setUpChrome();
+		}
+		public WebDriver getDriver() {
+			return driver;
+		}
+		
+		 public void initSelenium() throws Exception
+		    {
+		        // Creamos la instancia del driver
+		    	this.setUpChrome();
+//		        Logger.getRootLogger().removeAppender(APPENDER_TEST);
+		        String PATTERN = "%d{dd/MM/yyyy HH:mm:ss} %-5p (%F:%L) - %m%n";
+		        FileAppender fa = new FileAppender();
+//		        fa.setName(APPENDER_TEST);
+		        String path = PropertiesManager.getInstance().getProperty(EPropertiesNames.PATH_LOGS);
+		        fa.setFile(path  + "\\" + testClass + "\\" + testName + ".log");
+		        fa.setLayout(new PatternLayout(PATTERN));
+		        fa.setThreshold(Level.INFO);
+		        fa.setAppend(true);
+		        fa.activateOptions();
+		        Logger.getRootLogger().addAppender(fa);        
+		        // Creamos la instancia del screenShot manager
+		        boolean generateEvidence = PropertiesManager.getBooleanArgParam(PropertiesManager.GENERATE_EVIDENCE_PARAM);
+		        ssManager = new ScreenShotManager(this, generateEvidence);
+		    }
+
+		public void setUpChrome(){
+			System.setProperty(DRIVER_PATH_PROPERTY_NAME,DRIVER_PATH);
+	        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+	        capabilities.setCapability("nativeEvents", true);
+	        ChromeOptions chromeOptions = new ChromeOptions();
+
+	        chromeOptions.addArguments("--lang=es");
+	        chromeOptions.addArguments("--disable-extensions");
+	        chromeOptions.addArguments("start-maximized");
+	        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);   
+	        driver = new ChromeDriver(capabilities);
+		}
+		@AfterMethod
+		public void closeDriver(){
+			driver.close();
+		}
+	    public String getTestClass() {
+			return testClass;
+		}
+		public void setTestClass(String testClass) {
+			this.testClass = testClass;
+		}
+		public String getTestMethod() {
+			return testMethod;
+		}
+		public void setTestMethod(String testMethod) {
+			this.testMethod = testMethod;
+		}
+
+		
+		    
+		    
+		
+	
+
+}

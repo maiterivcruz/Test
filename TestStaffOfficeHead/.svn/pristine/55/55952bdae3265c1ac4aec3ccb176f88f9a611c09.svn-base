@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteStaffOffice">
+	<test name = "TestStaffOffice">
+	<parameter name="testName" value="TestStaffOffice" />
+    	<classes>  		
+    		<class name = "test.TestStaffOffice" >
+    			<methods>
+	        		<include name = "OpenBrowser" >
+	        			<parameter name="testLinkName" value="test staff office"/>
+	        		</include>
+	      		</methods>
+	      	</class>  
+		</classes>
+	</test>
+</suite>

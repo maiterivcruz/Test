@@ -1,0 +1,100 @@
+package test;
+import java.lang.reflect.Method;
+
+import org.json.JSONException;
+import org.junit.Assert;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import test.controller.StaffOffice;
+import test.pageobject.StaffOfficePO;
+import util.WebAccess;
+
+/**
+ * improve
+ * to use dataprovide
+ * create enum with error message
+ * load json http://dev.smartpelican.com/public/test_task/departments.php
+ * JSONObject obj = new JSONObject(" .... ");
+String pageName = obj.getJSONObject("pageInfo").getString("pageName");
+
+JSONArray arr = obj.getJSONArray("posts");
+for (int i = 0; i < arr.length(); i++)
+{
+    String post_id = arr.getJSONObject(i).getString("post_id");
+    ......
+}
+ * */
+
+public class TestStaffOffice extends WebAccess{
+	private StaffOffice staffOff;
+	
+	@Parameters({"testName", "testLinkName" })
+	@Test
+	public void validateUI(String testName, String testLinkName){
+		/*1-Check UI*/
+		staffOff=new StaffOffice(this);
+		staffOff.checkUI();
+	}
+	/*
+	 * c) Button to remove checked offices. When removing office(s), a confirmation popup should be
+
+		displayed. This popup should ask the user if they’re sure they want to remove the office(s),
+		
+		and provide ‘Yes’ and ‘No’ buttons as options.
+		
+		This set of elements should allow the user to enter one new office at a time, and remove several
+		
+		offices at a time.
+
+	 * */
+	@Parameters({"testName", "testLinkName" })
+	@Test
+	public void validateAddOfficeRightData(){
+		String nameOff="test";
+		int countOffice=staffOff.countOffices();
+		staffOff=new StaffOffice(this);
+		/*Insert data*/
+		staffOff.insertData(nameOff);
+		/*Check insert*/
+		Assert.assertEquals(countOffice+1, staffOff.countOffices());
+	}
+	@Parameters({"testName","testLinkName"})
+	@Test
+	public void validateAddOfficeEmptyData(){
+		staffOff=new StaffOffice(this);
+		/*Insert data*/
+		staffOff.insertData("");
+		/*check popup and message*/
+		staffOff.checkMsgEmptyOffice();
+		assertTest(staffOff);		
+	}
+	@Parameters({"testName","testLinkName"})
+	@Test
+	public void validateOfficeUnique() throws JSONException{
+		staffOff=new StaffOffice(this);
+		staffOff.insertData(staffOff.getOffice()); 
+		staffOff.checkMsgOfficeUnique();
+		assertTest(staffOff);
+	}
+	@Parameters({"teskName","testLinkName"})
+	@Test
+	public void deleteOffice() throws InterruptedException{
+		staffOff=new StaffOffice(this);
+		int office=staffOff.countOffices();
+		staffOff.deleteOffice("yes");
+		Assert.assertEquals(office-1,staffOff.countOffices() );
+
+	}
+	@Parameters({"teskName","testLinkName"})
+	@Test
+	public void cancelDeleteOffice() throws InterruptedException{
+		staffOff=new StaffOffice(this);
+		int office=staffOff.countOffices();
+		staffOff.deleteOffice("no");
+		Assert.assertEquals(office,staffOff.countOffices() );
+
+	}
+	
+
+}

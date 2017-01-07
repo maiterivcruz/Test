@@ -1,0 +1,331 @@
+package util;
+
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import elements.IElementView;
+import properties.EPropertiesNames;
+import properties.PropertiesManager;
+
+
+public class Utilities {
+	// VARIABLES
+	private static WebDriver driver;
+	protected static WebElement element;
+	protected String strJQuery;
+	protected By elementLocator;
+
+	public static String dirLog = PropertiesManager.getInstance().getProperty(EPropertiesNames.PATH_LOGS);
+	private static final Logger logger = Logger.getLogger(Utilities.class);
+	private String error;
+
+	
+	// CONSTRUCTOR
+	@SuppressWarnings("static-access")
+	public Utilities(WebDriver driver) {
+		this.driver = driver;
+		this.error = "";
+	}
+
+	public String getError() {
+		return this.error;
+	}
+
+	public void setError(String err) {
+		this.error = err;
+	}
+	
+	public static WebDriver getDriver()
+	{
+		return driver;
+	}
+
+	public static Map<Integer, String> datosFila = new HashMap<Integer, String>();
+
+	/**
+	 * Devuelve elemento, evitando staleness of element exception.
+	 * 
+	 * @param driver
+	 * @param locator
+	 * @return
+	 */
+	public static WebElement getElementByLocator(WebDriver driver, final By locator) {
+		final long startTime = System.currentTimeMillis();
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(30, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
+		WebElement we = null;
+		while ((System.currentTimeMillis() - startTime) < 91000) {
+			try {
+				we = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+				// Se esto se parte sacar la condicion elementToBeClicable y
+				// hacerlo en un metodo nuevo.
+				we = wait.until(ExpectedConditions.elementToBeClickable(locator));
+				break;
+			} catch (StaleElementReferenceException e) {
+				logger.info("Stale element::: \n" + e.getMessage() + "\n");
+			} catch (Exception ex) {
+				logger.info("No se pudo hacer clic en:::" + "\n" + locator.toString() + " " + "\n" + ex.getMessage() + "\n");
+			}
+		}
+		return we;
+	}
+
+	// Espero a que el boton aparezca para hacer click.
+	public static void clickByLocator(final By locator, WebDriver driver) {
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(90000, TimeUnit.MILLISECONDS).pollingEvery(5500, TimeUnit.MILLISECONDS);
+
+		wait.until(new ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				try {
+					driver.findElement(locator).click();
+					return true;
+				} catch (StaleElementReferenceException e) {
+					return false;
+				}
+			}
+		});
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
+
+	/**
+	 * Espera por un elemento
+	 * 
+	 * @param driver
+	 * @param el
+	 */
+	public static void waitForElement(WebDriver driver, WebElement el) {
+		final long startTime = System.currentTimeMillis();
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(30, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
+		while ((System.currentTimeMillis() - startTime) < 91000) {
+			try {
+				wait.until(ExpectedConditions.visibilityOf(el));
+				break;
+			} catch (Exception ex) {
+				logger.info("Se partio, no encontro el elemento: \n" + ex.getMessage() + "\n");
+			}
+		}
+	}
+
+	/**
+	 * @descripción
+	 * @author AdrianBenedetto
+	 * @throws FileNotFoundException
+	 */
+	public static void getAndSaveDataOfTable(final String tabla, WebDriver driver) throws Exception {
+		Thread.sleep(Constants.TimeOut5Milisegundos);
+		String data = "";
+		WebElement element = driver.findElement(By.xpath(tabla));
+		List<WebElement> elements = element.findElements(By.xpath("th"));
+		int cantelements = elements.size();
+		for (int i = 1; i <= cantelements; i++) {
+			data = driver.findElement(By.xpath("//div[@class='ui-datatable-scrollable-header-box']//table/thead/tr/th[" + i + "]/span[1]")).getText();
+			// Si data esta vacio es que la columna no se ve.
+			if (data.equalsIgnoreCase("")) {
+				scrollToElement(driver.findElement(By.xpath("//div[@class='ui-datatable-scrollable-header-box']//table/thead/tr/th[" + i + "]/span[1]")), driver);
+				data = driver.findElement(By.xpath("//div[@class='ui-datatable-scrollable-header-box']//table/thead/tr/th[" + i + "]/span[1]")).getText();
+			}
+			datosFila.put(i, data);
+		}
+	}
+	
+	/**
+	 * Valida que no haya una mensaje de alerta, si lo hay hace click en
+	 * aceptar.
+	 * 
+	 * @return
+	 */
+	public static void validarAlertas(WebDriver driver) {
+		try {
+			logger.info("Validando que no se haya desplegado un mensaje de alerta.");
+			driver.switchTo().alert().accept();
+			logger.info("Mensaje de alerta se desplego, procediendo a aceptarlo");
+		} catch (NoAlertPresentException ex) {
+			logger.info("Mensaje de alerta no se desplego.");
+		}
+	}
+
+	/**
+	 * Hace scroll hasta que el elemento deseado este visible.
+	 * 
+	 * @param element
+	 */
+	public static void scrollToElement(WebElement element, WebDriver driver) {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
+	public static boolean isElementPresent(WebDriver driver, final By byLocator, int seconds) throws Exception {
+		try {
+			(new WebDriverWait(driver, seconds)).until(new ExpectedCondition<WebElement>() {
+				@Override
+				public WebElement apply(WebDriver d) {
+					return d.findElement(byLocator);
+				}
+			});
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
+	}
+	
+	/**
+	 * Devuelve la fecha tomada por pantalla del estilo DD/MM/YYYY con el
+	 * formato de la BD.
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String cambiarFechaABD(String str) {
+		String aux[] = str.split("/");
+		str = aux[2] + aux[1] + aux[0];
+		return str;
+	}
+	
+	/**
+	 * Devuelve la ultima pagina, y luego vuelve a la primer pagina.
+	 * 
+	 * @param btnUltimaPagina
+	 * @param paginacion
+	 * @param btnPrimerPagina
+	 * @return
+	 * @throws Exception
+	 */
+	public static int ultimaPagina(By btnUltimaPagina, By paginacion, By btnPrimerPagina, WebDriver driver) throws Exception {
+		int paginas = 0;
+		Utilities.clickByLocator(btnUltimaPagina, driver);
+		Thread.sleep(Constants.TimeOut1Milisegundos);
+		if (driver.findElements(paginacion).size() != 0) {
+			List<WebElement> aux = driver.findElements(paginacion);
+			paginas = Integer.parseInt(aux.get(aux.size() - 1).getText());
+			Utilities.clickByLocator(btnPrimerPagina, driver);
+		} else {
+			logger.info("Tabla no tiene valores.");
+		}
+		return paginas;
+	}
+
+	/**
+	 * Comienza el prime face poll
+	 * 
+	 * @param driver
+	 */
+	public static void startPoll(WebDriver driver) {
+		try {
+			logger.info("Inciando el poll.");
+			((JavascriptExecutor) driver).executeScript("PF('messagesPollWidget').start();");
+		} catch (Exception ex) {
+			logger.info("Error al inciar el poll." + " " + ex.getMessage());
+		}
+	}
+
+	/**
+	 * Detiene el poll.
+	 * 
+	 * @param driver
+	 */
+	public static void stopPoll(WebDriver driver) {
+		try {
+			logger.info("Deteniendo el poll.");
+			((JavascriptExecutor) driver).executeScript("PF('messagesPollWidget').stop();");
+		} catch (Exception ex) {
+			logger.info("Error al parar el poll." + " " + ex.getMessage());
+		}
+	}
+
+	public static void dobleClick(WebDriver driver, WebElement element) {
+		Actions builder = new Actions(driver);
+		waitForElement(driver, element);
+		Action doubleClick = builder.doubleClick(element).build();
+		try {
+			Thread.sleep(Constants.TimeOut05Milisegundos);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		doubleClick.perform();
+	}
+	
+	public static boolean isElementPresentAndDisplayed(WebDriver driver, final By byLocator) {
+		try {
+			return driver.findElement(byLocator).isDisplayed();
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+
+	/**
+	 * Convierte la en la base en formato HH:MM:SS
+	 * 
+	 * @param hora
+	 * @return
+	 * @throws Exception
+	 */
+	public static String convertirHora(String hora) throws Exception {
+		String horaFormateada = null;
+		if (hora.length() == 1) {
+			horaFormateada = "00:0" + hora + ":00";
+		}
+		if (hora.length() == 2) {
+			horaFormateada = "00:" + hora + ":00";
+		}
+		if (hora.length() == 3) {
+			String aux[] = hora.split("");
+			horaFormateada = "0" + aux[1] + ":" + aux[2] + aux[3] + ":00";
+		}
+		if (hora.length() == 4) {
+			String aux[] = hora.split("");
+			horaFormateada = aux[1] + aux[2] + ":" + aux[3] + aux[4] + ":00";
+		}
+		if (hora.length() == 6) {
+			String aux[] = hora.split("");
+			horaFormateada = aux[1] + aux[2] + ":" + aux[3] + aux[4] + ":" + aux[5] + aux[6];
+		}
+		if (hora.equalsIgnoreCase("2400")) {
+			horaFormateada = "00:00:00";
+		}
+		return horaFormateada;
+	}
+
+	    @Deprecated
+	   public static void waitForElementById(WebDriver driver, String elementId) {	       
+	       WebDriverWait wait = new WebDriverWait(driver, 120);
+	       WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(elementId)));
+	    }
+	   @Deprecated
+	   public static void waitForElementByXpath(WebDriver driver, String elementXpath) {        
+           WebDriverWait wait = new WebDriverWait(driver, 120);
+           WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elementXpath)));
+        }
+	   @Deprecated
+	   public static void waitForElementByCss(WebDriver driver, String elementCss) {        
+           WebDriverWait wait = new WebDriverWait(driver, 120);
+           WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elementCss)));
+        }
+	   @Deprecated
+	   public static void waitForElementBySelector(WebDriver driver, IElementView selector) {        
+           WebDriverWait wait = new WebDriverWait(driver, 120);
+           WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(selector.getSelector()));
+        }
+	   
+}
