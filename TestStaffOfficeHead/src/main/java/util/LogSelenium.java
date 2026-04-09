@@ -5,124 +5,70 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.events.WebDriverEventListener;
+import org.openqa.selenium.support.events.WebDriverListener;
 import org.testng.Reporter;
 
 
-public class LogSelenium implements WebDriverEventListener {
+public class LogSelenium implements WebDriverListener {
 
     private By lastFindBy;
 	private static Logger logger = Logger.getLogger(LogSelenium.class);
 
     @Override
-    public void beforeNavigateTo(String url, WebDriver selenium){
+    public void beforeTo(WebDriver.Navigation navigation, String url) {
         Reporter.log("<br>&nbsp;&nbsp;&nbsp;- Go to:'"+url+"'");
     }
 
-    public void beforeChangeValueOf(WebElement element, WebDriver selenium){
+    @Override
+    public void beforeSendKeys(WebElement element, CharSequence... keysToSend) {
     }
 
-    public void afterChangeValueOf(WebElement element, WebDriver selenium){
-        if(!element.getAttribute("value").isEmpty()){
-            Reporter.log("<br>&nbsp;&nbsp;&nbsp;- Change element's value ("+lastFindBy+") to '"+ element.getAttribute("value") +"'");
+    @Override
+    public void afterSendKeys(WebElement element, CharSequence... keysToSend) {
+        String value = element.getAttribute("value");
+        if (value != null && !value.isEmpty()) {
+            Reporter.log("<br>&nbsp;&nbsp;&nbsp;- Change element's value ("+lastFindBy+") to '"+ value +"'");
         }
     }
 
     @Override
-    public void beforeFindBy(By by, WebElement element, WebDriver selenium){
-        lastFindBy = by;
+    public void beforeFindElement(WebDriver driver, By locator) {
+        lastFindBy = locator;
     }
 
     @Override
-    public void onException(Throwable error, WebDriver selenium){
-        if (error.getClass().equals(NoSuchElementException.class)){
-            Reporter.log("<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found ("+lastFindBy+")");
-            logger.info("Element no found ("+lastFindBy+")");
-        } else {
-            Reporter.log("<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: " + error.toString());
-        }
+    public void beforeFindElements(WebDriver driver, By locator) {
+        lastFindBy = locator;
     }
 
     @Override
-    public void beforeNavigateBack(WebDriver selenium){}
-    
-    @Override
-    public void beforeNavigateForward(WebDriver selenium){}
-    
-    @Override
-    public void beforeClickOn(WebElement element, WebDriver selenium){
-//    	 ScreenShot(selenium);
+    public void beforeClick(WebElement element) {
     }
-    
+
     @Override
-    public void beforeScript(String script, WebDriver selenium){
+    public void afterClick(WebElement element) {
+        Reporter.log("<br>&nbsp;&nbsp;&nbsp;- CLICK in ("+lastFindBy+")");
+    }
+
+    @Override
+    public void beforeExecuteScript(WebDriver driver, String script, Object[] args) {
         Reporter.log("<br>&nbsp;&nbsp;&nbsp;- RUN javascript:" + script);
     }
 
     @Override
-    public void afterClickOn(WebElement element, WebDriver selenium){
-        Reporter.log("<br>&nbsp;&nbsp;&nbsp;- CLICK in ("+lastFindBy+")");
-    }
-    
-    @Override
-    public void afterFindBy(By by, WebElement element, WebDriver selenium){}
-    
-    @Override
-    public void afterNavigateBack(WebDriver selenium){}
-    
-    @Override
-    public void afterNavigateForward(WebDriver selenium){}
-    
-    @Override
-    public void afterNavigateTo(String url, WebDriver selenium){}
-    
-    @Override
-    public void afterScript(String script, WebDriver selenium){
+    public void afterExecuteScript(WebDriver driver, String script, Object[] args) {
         Reporter.log("<br>&nbsp;&nbsp;&nbsp;- COMPLETED execution");
     }
 
-	@Override
-	public void beforeNavigateRefresh(WebDriver driver) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afterNavigateRefresh(WebDriver driver) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
-		// TODO Auto-generated method stub
-		
-	}
-    
-//    public void ScreenShot(WebDriver selenium ){
-//    	 String fechaYhora =  FechaHandler.getInstance().getFechaHoraMils();
-//         String fileName = this.getClass().getName() + fechaYhora + ".png";
-//         String destDir = System.getProperty("user.dir") + "\\test-output\\Screenshot\\"+ fileName;
-//         File scrFile = ((TakesScreenshot)selenium).getScreenshotAs(OutputType.FILE);
-//			try {
-//				FileUtils.copyFile(scrFile, new File(destDir));
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//        
-//         String url = "file:///" + System.getProperty("user.dir") + "\\test-output\\Screenshot\\" + fileName;
-//         Reporter.log("<p>Captura de pantalla final:<br>");
-//         
-//         Reporter.log("&nbsp;&nbsp;&nbsp;<a href=\"" + url + "\">" + fileName + " Screenshot</a>");                
-//         Reporter.log("<br><img src='Screenshot\\"+fileName+"' width='800'/>");
-//    }
-
+    @Override
+    public void onError(Object target, java.lang.reflect.Method method, Object[] args, java.lang.reflect.InvocationTargetException e) {
+        Throwable cause = e.getCause();
+        if (cause != null && cause.getClass().equals(NoSuchElementException.class)) {
+            Reporter.log("<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: Element no found ("+lastFindBy+")");
+            logger.info("Element no found ("+lastFindBy+")");
+        } else {
+            Reporter.log("<br>&nbsp;&nbsp;&nbsp;- SELENIUM ERROR: " + (cause != null ? cause.toString() : e.toString()));
+        }
+    }
 
 }

@@ -1,5 +1,6 @@
 package elements;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -162,7 +163,7 @@ public class ValidateElement {
 
 	public static boolean isElementPresent(WebDriver driver, final By byLocator, int seconds) throws Exception {
 		try {
-			(new WebDriverWait(driver, seconds)).until(new ExpectedCondition<WebElement>() {
+			(new WebDriverWait(driver, Duration.ofSeconds(seconds))).until(new ExpectedCondition<WebElement>() {
 				@Override
 				public WebElement apply(WebDriver d) {
 					return d.findElement(byLocator);

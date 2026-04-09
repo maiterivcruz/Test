@@ -1,9 +1,9 @@
 package util;
 
 import java.text.MessageFormat;
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -222,7 +222,7 @@ public class NUtilities {
 
 	public void clickElement(final By selector) {
 		shortWait();
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(90000, TimeUnit.MILLISECONDS).pollingEvery(5500, TimeUnit.MILLISECONDS);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofMillis(90000)).pollingEvery(Duration.ofMillis(5500));
 		wait.until(new ExpectedCondition<Boolean>() {
 			@Override
 			public Boolean apply(WebDriver driver) {
@@ -483,22 +483,22 @@ public class NUtilities {
 
 	@Deprecated
 	public void waitForElementById(String elementId) {           
-        WebDriverWait wait = new WebDriverWait(driver, 120);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(elementId)));
      }
 	@Deprecated
     public void waitForElementByXpath(String elementXpath) {        
-        WebDriverWait wait = new WebDriverWait(driver, 120);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elementXpath)));
      }
 	@Deprecated
     public void waitForElementByCss(String elementCss) {        
-        WebDriverWait wait = new WebDriverWait(driver, 120);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         WebElement myDynamicElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elementCss)));
      }
     public void waitForElementBySelector(IElementView selector) {  
 //        logger.info("Waiting for Element: " + selector.getElementDescription());
-        WebDriverWait wait = new WebDriverWait(driver, 200);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(200));
         WebElement myDynamicElement = wait.until(ExpectedConditions.visibilityOfElementLocated(selector.getSelector()));
      }
 
