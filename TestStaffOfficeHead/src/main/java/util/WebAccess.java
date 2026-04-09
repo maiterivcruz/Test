@@ -17,15 +17,12 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.MarionetteDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.events.WebDriverEventListener;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.WebDriverListener;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -44,7 +41,7 @@ public class WebAccess {
 	private RemoteWebDriver webDriver = null;
     protected WebDriver driver;
 	private static Logger logger = Logger.getLogger(WebAccess.class);
-    WebDriverEventListener eventListener = new LogSelenium();
+    WebDriverListener eventListener = new LogSelenium();
 	private static String DRIVER_PATH_PROPERTY_NAME = "webdriver.chrome.driver";
 	private static String DRIVER_PATH = "driver/chromedriver.exe";
 	private static String DRIVER_PATH_PROPERTY_NAME_IE = "webdriver.ie.driver";
@@ -105,30 +102,25 @@ public class WebAccess {
 	public void setUpChrome() throws Exception {
 		logger.info("Open chrome");
 		System.setProperty(DRIVER_PATH_PROPERTY_NAME, DRIVER_PATH);
-		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		capabilities.setCapability("nativeEvents", true);
 		ChromeOptions chromeOptions = new ChromeOptions();
-
 		chromeOptions.addArguments("--lang=es");
 		chromeOptions.addArguments("--disable-extensions");
 		chromeOptions.addArguments("start-maximized");
-		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-        webDriver = new RemoteWebDriver(hubUrl, capabilities);
-        driver = new EventFiringWebDriver(webDriver).register(eventListener);
+        webDriver = new RemoteWebDriver(hubUrl, chromeOptions);
+        driver = new EventFiringDecorator<>(eventListener).decorate(webDriver);
 	}
 	public void setUpFirefox(){
 		logger.info("Open firefox");
-		//System.setProperty("webdriver.gecko.driver","C:\\workspaceTJM\\selenium\\geckodriver.exe");
-		DesiredCapabilities capabilities = new DesiredCapabilities().firefox();		
-		webDriver = new RemoteWebDriver(hubUrl, capabilities);
-	    driver = new EventFiringWebDriver(webDriver).register(eventListener);
+		FirefoxOptions firefoxOptions = new FirefoxOptions();
+		webDriver = new RemoteWebDriver(hubUrl, firefoxOptions);
+	    driver = new EventFiringDecorator<>(eventListener).decorate(webDriver);
 	}
 	public void setUpIExplorer(){
 		logger.info("Open Internet Explorer");
 		System.setProperty(DRIVER_PATH_PROPERTY_NAME_IE, DRIVER_PATH_IE);
-		DesiredCapabilities capabilities = new DesiredCapabilities().internetExplorer();
-		webDriver = new RemoteWebDriver(hubUrl, capabilities);
-		driver= new EventFiringWebDriver(webDriver).register(eventListener);
+		InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+		webDriver = new RemoteWebDriver(hubUrl, ieOptions);
+		driver = new EventFiringDecorator<>(eventListener).decorate(webDriver);
 	}
 	public void assertTest(AbstractPageTest test) {
 		Pair<Boolean, String> validateRes = test.validateElements();
